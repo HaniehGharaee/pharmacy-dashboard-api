@@ -13,6 +13,33 @@ To build a scalable backend system using PostgreSQL and NestJS, demonstrating re
 
 ---
 
+## Tech Stack
+
+- PostgreSQL 18
+- NestJS (initialized)
+- Prisma (planned)
+
+---
+
+## Project Structure
+pharmacy-dashboard-api/
+│
+├── backend/ # NestJS application (in progress)
+│
+├── database/
+│ ├── schema.sql
+│ ├── seed.sql
+│ └── README.md
+│
+├── docs/
+│ ├── requirements.md
+│ ├── database-design.md
+│ ├── api-plan.md
+│ └── er-diagram.png
+│
+└── README.md
+
+
 ---
 
 ## Database Schema
@@ -39,20 +66,28 @@ The system currently includes the following core entities:
 
 ---
 
-## Database
+## Backend (NestJS)
 
-The database is designed with relational integrity using foreign keys:
+The backend project has been initialized using NestJS.
 
-- medicines → medicine_categories
-- medicines → manufacturers
-- inventory → medicines
+Next steps:
+- Configure environment variables
+- Connect PostgreSQL database
+- Implement authentication module
+- Setup Prisma ORM (optional)
+- Create first REST APIs
 
-All seed data is located in:
+---
 
-database/
-├── schema.sql
-├── seed.sql
-└── README.md
+## Database Design
+
+Relational structure:
+
+- medicine_categories → medicines
+- manufacturers → medicines
+- medicines → inventory
+
+All schema definitions and seed data are located in `/database`.
 
 ---
 
@@ -64,8 +99,9 @@ database/
 - Seed data
 - System documentation
 
-### Phase 2 – Backend Core (Planned)
-- NestJS project setup
+### Phase 2 – Backend Core (In Progress)
+- NestJS setup
+- PostgreSQL connection
 - Authentication system (2-step login + TOTP)
 - User management API
 
@@ -80,31 +116,8 @@ database/
 
 ---
 
-## Project Structure
-
-
-pharmacy-dashboard-api/
-│
-├── database/
-│ ├── schema.sql
-│ ├── seed.sql
-│ └── README.md
-│
-├── docs/
-│ ├── requirements.md
-│ ├── database-design.md
-│ ├── api-plan.md
-│ └── er-diagram.png
-│
-└── README.md
-
-
----
-
 ## Notes
 
-- This project currently focuses on database design and system architecture.
-- Backend implementation will be built using NestJS in the next phase.
-- All sample data is for development purposes only.
-
----
+- Backend is currently under development.
+- Database layer is fully designed and seeded.
+- Project follows modular and scalable architecture principles.
