@@ -5,6 +5,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { UserRole } from '../../../common/enums/user-role.enum';
 
 @Entity('users')
 export class UserEntity {
@@ -22,7 +23,7 @@ export class UserEntity {
   @Column({ length: 20, nullable: true })
   phone?: string;
 
-  @Column({ length: 50, default: 'ADMIN' })
+  @Column({ length: 50, default: UserRole.ADMIN })
   role!: string;
 
   @Column({ name: 'is_active', default: true })
